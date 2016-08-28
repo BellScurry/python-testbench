@@ -1,0 +1,6 @@
+# General Rules
+.*
+__pycache__
+
+# DO NOT ignore .gitignore
+!.gitignore
