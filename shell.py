@@ -1,12 +1,16 @@
 import subprocess
 
-p = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-q = subprocess.Popen('cat shell.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+p1 = subprocess.Popen('cat shell.py', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+p2 = subprocess.Popen('ls', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+p3 = subprocess.Popen('ls | xargs echo', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
-for line in p.stdout.readlines():
+for line in p1.stdout.readlines():
     print(line.rstrip().decode('ascii'))
 
-for line in q.stdout.readlines():
+for line in p2.stdout.readlines():
     print(line.rstrip().decode('ascii'))
 
-retval = p.wait()
+for line in p3.stdout.readlines():
+    print(line.rstrip().decode('ascii'))
+
+retval = p1.wait()
