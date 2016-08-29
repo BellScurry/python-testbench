@@ -1,7 +1,7 @@
           Python Testbench
 
 arg.py
- - Argument processing using module 'sys'
+ - Argument processing using module 'sys' and 'argparse'
 
 shell.py
  - Interaction with shell using module 'subprocess'
