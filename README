@@ -5,3 +5,6 @@ arg.py
 
 shell.py
  - Interaction with shell using module 'subprocess'
+
+ not.py
+  - How keyword 'not' works in python
